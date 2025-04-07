@@ -75,19 +75,23 @@
             if (/android/i.test(userAgent)) {
                 detectedOS = "Android";
                 // IMPORTANT: Replace 'com.example.yourapp' with your actual app package name
-                targetUrl = "market://details?id=com.wehear.wehear";
+                // targetUrl = "market://details?id=com.wehear.wehear";
+targetUrl = "https://play.google.com/store/apps/dev?id=5254650407286410893&hl=en_IN";
+
                 // Fallback link (optional):
                 // targetUrl = "https://play.google.com/store/apps/details?id=com.example.yourapp";
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) { // iOS detection
                 detectedOS = "iOS";
                 // IMPORTANT: Replace '123456789' with your actual app's Apple ID
-                targetUrl = "itms-apps://itunes.apple.com/app/id6463114022";
+                // targetUrl = "itms-apps://itunes.apple.com/app/id6463114022";
                  // Fallback link (optional):
-                // targetUrl = "https://apps.apple.com/app/id123456789";
+                targetUrl = "https://apps.apple.com/in/developer/wehear-innovations-private-limited/id1601123032";
             } else if (/Mac OS X/i.test(userAgent)) {
                 detectedOS = "macOS";
+                targetUrl = "https://wehearglobal.com/?srsltid=AfmBOorXN2dv2GIDX0KYhLDrsLkFtUL_jGjZtcoNVEK-MB46y37sbYBE";
             } else if (/Windows/i.test(userAgent)) {
                 detectedOS = "Windows";
+            targetUrl = "https://wehearglobal.com/?srsltid=AfmBOorXN2dv2GIDX0KYhLDrsLkFtUL_jGjZtcoNVEK-MB46y37sbYBE";
             } else if (/Linux/i.test(userAgent)) {
                  // Check for Linux, but make sure it's not Android
                 if (!/android/i.test(userAgent)) {
@@ -100,7 +104,7 @@
             osNameElement.textContent = detectedOS;
 
             // --- Redirect Logic (No Timer) ---
-            if (detectedOS === "Android" || detectedOS === "iOS") {
+            // if (detectedOS === "Android" || detectedOS === "iOS") {
                 // Show the redirect status message
                 redirectStatusElement.classList.remove('hidden');
                 console.log("Attempting redirect to:", targetUrl);
@@ -114,10 +118,11 @@
                      redirectStatusElement.style.color = "#dc3545"; // Make error red
                 }
 
-            } else {
-                // Show message that redirection isn't happening for other OSes
-                noRedirectMessageElement.classList.remove('hidden');
-            }
+            // } 
+            // else {
+            //     // Show message that redirection isn't happening for other OSes
+            //     noRedirectMessageElement.classList.remove('hidden');
+            // }
         };
     </script>
 </body>
